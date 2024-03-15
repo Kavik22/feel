@@ -1,0 +1,71 @@
+/register
+    required fields:
+        -email
+        -password
+    optional fields:
+        -wishes
+        -calendar
+        -test_result
+        -last_reset_code
+        -re_password
+    returned fields:
+        -status
+
+/login
+    required fields:
+        -email
+        -login
+    returned fields:
+        -status
+
+/edit
+    required fields:
+        -email
+    optional fields:
+        -wishes
+        -calendar
+        -test_result
+    returned fields:
+        -wishes
+        -calendar
+        -test_result
+            //or//
+        -status
+
+/get_user_data
+    required fields:
+        -email
+    returned fields:
+        -wishes
+        -calendar
+        -test_result
+            //or//
+        -status
+
+/reset_password_init
+    required fields:
+        -email
+    returned fields:
+        -status
+        -message (only if the message has been sent)
+
+/reset_password_check
+    required fields:
+        -email
+        -last_reset_code
+    returned fields:
+        -status
+
+/set_new_password
+    required fields:
+        -email
+        -password
+        -re_password
+    returned fields:
+        -status
+
+/get_all_users
+    do:
+        prints all users to the console
+    returned fields:
+        -status

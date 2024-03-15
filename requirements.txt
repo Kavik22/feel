@@ -3,3 +3,5 @@ uvicorn==0.28.0
 sqlalchemy==2.0.28
 aiosqlite==0.17.0
 starlette-admin==0.13.2
+python-dotenv==1.0.1
+starlette==0.37.2

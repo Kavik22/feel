@@ -20,6 +20,11 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 
+@app.get("/")
+async def home():
+    return "I'm alive"
+    
+
 @app.post("/register")
 async def add_task(user: UserValidator = Depends()):
     status = await UserRepository.register(user)

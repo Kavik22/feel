@@ -20,9 +20,9 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 
-@app.get("")
-async def home():
-    return "I'm alive"
+@app.get("/")
+async def root():
+    return {'status': 200}
     
 
 @app.post("/register")
